@@ -83,8 +83,8 @@
     + use 异步加载JS文件，提供一个callback回调函数
 
 * SeaJs模块开发 SVN -> static9/pub
-
-    define('login', function(require) {
+``` JS
+    define(function(require) {
         var $ = require('jquery'),
             user = require('user'),
             cookie = require('cookie');
@@ -92,6 +92,7 @@
             run : function(){}
         }
     });
+```
 
 * 页面中使用
     1. 头部定义seajs

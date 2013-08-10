@@ -10,18 +10,18 @@
   <![endif]-->
 </head>
 <body>
-<h1 id="网站重构切页面-seajs-框架的使用">网站重构‘切页面’ &amp;&amp; SeaJs 框架的使用</h1>
-<h2 id="大纲">大纲</h2>
+<h1 id="网站重构-seajs-框架的使用">网站重构 &amp;&amp; SeaJs 框架的使用</h1>
+<h2 id="内容提要">内容提要</h2>
 <ul>
-<li>你会学到什么?
+<li>会讲什么?
 <ul>
-<li>CSS 定义，为什么要用CSS<br /></li>
+<li>CSS 定义，为什么要用CSS</li>
 <li>盒子模型介绍</li>
 <li>重构('切页面')流程的工作流程(从设计的PSD -&gt; 完整的html实现)</li>
 <li>Seajs 介绍</li>
 <li>SeaJs 使用规范以及SeaJs模块开发</li>
 </ul></li>
-<li>你不会学到什么?
+<li>不会讲什么?
 <ul>
 <li>浏览器的兼容处理</li>
 <li>CSS3的使用</li>
@@ -51,14 +51,14 @@
 </ol>
 <h3 id="盒子模型">盒子模型</h3>
 <h4 id="标准模式下盒子模型">标准模式下盒子模型</h4>
-<p>当浏览器厂商开始创建与标准兼容的浏览器时，他们希望确保向后兼容性。为了实现这一点，他们创建了两种呈现模式：标准模式和混杂模式。在标准模式下浏览器按照规范呈现页面；在混杂模式下，页面以一种比较宽松的向后兼容的方式显示。混杂模式通常模拟老式浏览器的行为以防止老站点无法工作。<br /><img src="standard-mode-_thumb.jpg" alt="标准模式下盒子模型" /></p>
+<p>当浏览器厂商开始创建与标准兼容的浏览器时，他们希望确保向后兼容性。为了实现这一点，他们创建了两种呈现模式：标准模式和混杂模式。在标准模式下浏览器按照规范呈现页面；在混杂模式下，页面以一种比较宽松的向后兼容的方式显示。混杂模式通常模拟老式浏览器的行为以防止老站点无法工作。 <img src="standard-mode-_thumb.jpg" alt="标准模式下盒子模型" /></p>
 <h4 id="混杂模式下盒子模型">混杂模式下盒子模型</h4>
-<p>浏览器根据DOCTYPE（文档声明）是否存在以及使用那种DTD来选择要使用的呈现方式。如果XHTML和HTML文档保航形式完整的DOCTYPE，那么它一般以标准模式呈现。相反，如果文档的DOCTYPE不存在或者形式不正确则导致HTML和XHTML以混杂模式呈现。<br /><img src="quirks-mode_thumb.jpg" alt="混杂模式下盒子模型" /></p>
+<p>浏览器根据DOCTYPE（文档声明）是否存在以及使用那种DTD来选择要使用的呈现方式。如果XHTML和HTML文档保航形式完整的DOCTYPE，那么它一般以标准模式呈现。相反，如果文档的DOCTYPE不存在或者形式不正确则导致HTML和XHTML以混杂模式呈现。 <img src="quirks-mode_thumb.jpg" alt="混杂模式下盒子模型" /></p>
 <h3 id="重构流程">重构流程</h3>
 <ul>
 <li>先结构，后表现，在行为。（通俗点就是先 HTML 构架，再 CSS 渲染，最后写入 Javascript）</li>
 <li>先分析页面结构，将页面按上中下结构划分成不同模块，然后左右划分</li>
-<li>结构，表现，行为分离<br /><img src="designsteps.gif" alt="图片" /></li>
+<li>结构，表现，行为分离 <img src="designsteps.gif" alt="图片" /></li>
 </ul>
 <h3 id="举例子">举例子</h3>
 <ul>
@@ -76,7 +76,7 @@
 <h3 id="seajs-介绍">Seajs 介绍</h3>
 <ul>
 <li>A Module Loader for the Web</li>
-<li>CMD - Common Module Definition<br /> <img src="seajs-cmd.jpg" alt="CMD" /></li>
+<li>CMD - Common Module Definition <img src="seajs-cmd.jpg" alt="CMD" /></li>
 <li><a href="http://seajs.org/docs/#docs">SeaJs官方文档</a></li>
 </ul>
 <h3 id="seajs-使用规范以及seajs模块开发">SeaJs 使用规范以及SeaJs模块开发</h3>
@@ -87,8 +87,7 @@
 <li>require seajs模块内部使用，同步获取文件</li>
 <li>use 异步加载JS文件，提供一个callback回调函数</li>
 </ul></li>
-<li><p>SeaJs模块开发 SVN -&gt; static9/pub</p>
-<p>define('login', function(require) { var $ = require('jquery'), user = require('user'), cookie = require('cookie'); return { run : function(){} } });</p></li>
+<li><p>SeaJs模块开发 SVN -&gt; static9/pub <code>JS     define(function(require) {         var $ = require('jquery'),             user = require('user'),             cookie = require('cookie');         return {             run : function(){}         }     });</code></p></li>
 <li>页面中使用
 <ol type="1">
 <li>头部定义seajs</li>
